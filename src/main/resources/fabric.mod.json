@@ -1,0 +1,29 @@
+{
+	"schemaVersion": 1,
+	"id": "run-it-back",
+	"version": "${version}",
+	"name": "RunItBack",
+	"description": "Annoyance mod that makes you have to mine blocks repeatedly",
+	"authors": [
+		"Maganoos"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/run-it-back",
+        "issues": "https://github.com/Maganoos/run-it-back/issues",
+		"sources": "https://github.com/Maganoos/run-it-back"
+	},
+	"license": "MIT",
+	"icon": "assets/run-it-back/icon.png",
+	"environment": "*",
+    "entrypoints": {
+        "main": [
+          "eu.magkari.mc.run_it_back.RunItBack"
+        ]
+    },
+	"depends": {
+		"fabricloader": ">=0.18",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
