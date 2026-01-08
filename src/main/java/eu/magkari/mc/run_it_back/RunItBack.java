@@ -41,7 +41,7 @@ public class RunItBack implements ModInitializer {
         fillLists(false);
 
         PlayerBlockBreakEvents.BEFORE.register((level, player, blockPos,  blockState, blockEntity) -> {
-            if (!CONFIG.enabled.value() || player.getAbilities().instabuild && CONFIG.creative.value() || Permissions.check(player, CONFIG.bypassPermission.value())) return true;
+            if (!CONFIG.enabled.value() || player.getAbilities().instabuild && CONFIG.permissions.creative.value() || Permissions.check(player, CONFIG.permissions.bypassPermission.value())) return true;
 
             if (BLOCKS.contains(blockState.getBlock())) {
                 return handle(blockPos);
@@ -59,7 +59,7 @@ public class RunItBack implements ModInitializer {
 
     private boolean handle(BlockPos blockPos) {
         if (cache.containsKey(blockPos)) {
-            if (cache.get(blockPos) < CONFIG.count.value() - 1) {
+            if (cache.get(blockPos) < CONFIG.getAttemptsForBlock(blockPos) - 1) {
                 cache.put(blockPos, cache.get(blockPos) + 1);
                 return false;
             } else {

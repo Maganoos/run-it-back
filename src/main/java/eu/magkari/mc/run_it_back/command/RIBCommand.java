@@ -13,7 +13,7 @@ public class RIBCommand {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext buildContext, Commands.CommandSelection commandSelection) {
         var base = Commands.literal(RunItBack.MOD_ID)
                 .requires(Permissions.require(
-                        RunItBack.CONFIG.permission.value(),
+                        RunItBack.CONFIG.permissions.permission.value(),
                         PermissionLevel.GAMEMASTERS
                 ));
 
